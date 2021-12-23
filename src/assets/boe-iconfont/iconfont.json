@@ -1,0 +1,23 @@
+{
+  "id": "3020343",
+  "name": "boe-official",
+  "font_family": "iconfont",
+  "css_prefix_text": "boe-icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2142837",
+      "name": "left",
+      "font_class": "left",
+      "unicode": "e6a7",
+      "unicode_decimal": 59047
+    },
+    {
+      "icon_id": "2142863",
+      "name": "right",
+      "font_class": "right",
+      "unicode": "e6b6",
+      "unicode_decimal": 59062
+    }
+  ]
+}

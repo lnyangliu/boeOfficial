@@ -7,8 +7,10 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "swiper": "^7.3.2",
     "vue": "^3.2.16",
-    "vue-router": "^4.0.12"
+    "vue-router": "^4.0.12",
+    "vue-waypoint": "^4.2.1"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.4.0",
@@ -19,7 +21,10 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.1.1",
     "husky": "^7.0.4",
+    "less": "^4.1.2",
+    "less-loader": "^10.2.0",
     "prettier": "^2.4.1",
+    "style-resources-loader": "^1.5.0",
     "typescript": "^4.4.3",
     "vite": "^2.6.4",
     "vue-tsc": "^0.3.0"
