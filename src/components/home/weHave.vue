@@ -13,9 +13,9 @@
   </div>
 </template>
 <script lang="ts">
-import { reactive,onMounted } from 'vue'
+import { reactive,onMounted,defineComponent } from 'vue'
 import { Waypoint } from 'vue-waypoint'
-export default {
+export default defineComponent({
   components: {
     Waypoint,
   },
@@ -75,7 +75,7 @@ export default {
       onChange,
     }
   },
-}
+})
 </script>
 <style lang="less" scoped>
 .part-title {

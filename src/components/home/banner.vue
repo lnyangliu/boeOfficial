@@ -13,8 +13,8 @@
       class="mySwiper"
     >
       <!-- <swiper-slide><img src="@/assets/images/banner0.jpg" /></swiper-slide> -->
-      <swiper-slide><img src="@/assets/images/banner1.png" /></swiper-slide>
-      <swiper-slide><img src="@/assets/images/banner2.png" /></swiper-slide>
+      <swiper-slide><img src="@/assets/images/banner1.jpg" /></swiper-slide>
+      <!-- <swiper-slide><img src="@/assets/images/banner2.png" /></swiper-slide> -->
     </swiper>
   </div>
 </template>

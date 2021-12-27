@@ -25,6 +25,7 @@
                   class="drop-item-button"
                   v-for="dropItem in dropLine.children"
                   :key="dropItem.name"
+                  @click.stop="navClick(dropItem.location, barIndex)"
                 >
                   {{ dropItem.name }}
                 </div>
@@ -37,9 +38,9 @@
   </div>
 </template>
 <script lang="ts">
-import { ref, reactive } from 'vue'
+import { ref, reactive, defineComponent } from 'vue'
 import { useRouter } from 'vue-router'
-export default {
+export default defineComponent({
   components: {},
   setup() {
     let router = useRouter()
@@ -55,27 +56,25 @@ export default {
         location: '/production',
         children: [
           {
-            name: '数字化产品方案',
+            name: '数字化平台',
             children: [
-              { name: '检讨产品方案', location: '/production/detail/review' },
-              { name: '设计产品方案', location: '/production/detail/design' },
-              { name: '检查产品方案', location: '/production/detail/check' },
-              {
-                name: '仿真产品方案',
-                location: '/production/detail/simulation',
-              },
+              { name: 'Quest平台', location: '/production/quest' },
+              { name: 'Cell RFQ平台', location: '/production/cell' },
+              { name: 'iCheck平台', location: '/production/icheck' },
+              { name: '仿真平台', location: '/production/fangzhen' },
+              { name: 'iBox平台', location: '/production/ibox' },
+              { name: '工艺平台', location: '/production/gongyi' }
             ],
           },
           {
-            name: '传统化产品方案',
+            name: '自动化工具',
             children: [
-              { name: '检讨产品方案', location: '/production/detail/review' },
-              { name: '设计产品方案', location: '/production/detail/design' },
-              { name: '检查产品方案', location: '/production/detail/check' },
-              {
-                name: '仿真产品方案',
-                location: '/production/detail/simulation',
-              },
+              
+              { name: 'Mask自动化工具', location: '/production/maskz' },
+              { name: 'Cell自动化工具', location: '/production/cellz' },
+              { name: '电路自动化工具', location: '/production/dianluz' },
+              { name: '机械自动化工具', location: '/production/jixiez' },
+              { name: '光学自动化工具', location: '/production/guangxuez' },
             ],
           },
         ],
@@ -86,7 +85,7 @@ export default {
     const activeNavBarIndex = ref(0)
     let path = window.location.pathname
     navData.map((item, index) => {
-      if(item.location == path) {
+      if (item.location == path) {
         activeNavBarIndex.value = index
       } else if (path.indexOf('/production') > -1) {
         activeNavBarIndex.value = 2
@@ -94,7 +93,17 @@ export default {
     })
     function navClick(location: any, barIndex: number) {
       if (location) {
-        router.push(location)
+        if(location.indexOf('/production') > -1) {
+          let arr = location.split('/')
+          router.push({
+            name: 'production',
+            params: {
+              pro: arr[2]
+            }
+          })
+        } else {
+          router.push(location)
+        }
         activeNavBarIndex.value = barIndex
       }
     }
@@ -104,7 +113,7 @@ export default {
       navClick,
     }
   },
-}
+})
 </script>
 <style lang="less" scoped>
 .header-box {
@@ -136,7 +145,6 @@ export default {
         float: left;
         margin-left: 33px;
         height: 60px;
-        height: 60px;
         position: relative;
         padding: 20px;
         box-sizing: border-box;
@@ -163,7 +171,7 @@ export default {
         &.bar-active .header-nav-text,
         &:hover {
           .header-nav-drop {
-            height: 194px;
+            height: 262px;
           }
           .header-nav-text {
             color: #1877f2;
@@ -185,9 +193,9 @@ export default {
           background: #fff;
           -webkit-box-shadow: 1px 2px 8px 0 rgb(0 62 149 / 18%);
           box-shadow: 1px 2px 8px 0 rgb(0 62 149 / 18%);
-          -webkit-transition: all .4s ease;
-          -o-transition: all .4s ease;
-          transition: all .4s ease;
+          -webkit-transition: all 0.4s ease;
+          -o-transition: all 0.4s ease;
+          transition: all 0.4s ease;
           border-radius: 0 0 6px 6px;
           .drop-container {
             padding-top: 7px;

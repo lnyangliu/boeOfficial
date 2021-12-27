@@ -15,15 +15,9 @@
       @setTranslate="setTranslate"
       class="mySwiper"
     >
-      <swiper-slide>1</swiper-slide>
-      <swiper-slide>2</swiper-slide>
-      <swiper-slide>3</swiper-slide>
-      <swiper-slide>4</swiper-slide>
-      <swiper-slide>5</swiper-slide>
-      <swiper-slide>6</swiper-slide>
-      <swiper-slide>7</swiper-slide>
-      <swiper-slide>8</swiper-slide>
-      <swiper-slide>9</swiper-slide>
+      <swiper-slide v-for="(pro, index) in swiperData" :key="index+'pro'">
+        <img class="product-img" :src="pro" />
+      </swiper-slide>
     </swiper>
     <div class="option-btns">
       <div class="left-btn option-btn">
@@ -46,7 +40,19 @@ import SwiperCore, {
 SwiperCore.use([EffectFade, Navigation, Pagination, A11y, Autoplay])
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css/bundle'
-import { defineComponent } from 'vue'
+import { defineComponent, reactive } from 'vue'
+
+import p1 from '@/assets/images/home-product/p1.png'
+import p2 from '@/assets/images/home-product/p2.png'
+import p3 from '@/assets/images/home-product/p3.png'
+import p4 from '@/assets/images/home-product/p4.png'
+import p5 from '@/assets/images/home-product/p5.png'
+import p6 from '@/assets/images/home-product/p6.png'
+import p7 from '@/assets/images/home-product/p7.png'
+import p8 from '@/assets/images/home-product/p8.png'
+import p9 from '@/assets/images/home-product/p9.png'
+import p10 from '@/assets/images/home-product/p10.png'
+import p11 from '@/assets/images/home-product/p11.png'
 
 export default defineComponent({
   components: {
@@ -54,6 +60,7 @@ export default defineComponent({
     SwiperSlide,
   },
   setup() {
+    const swiperData = reactive([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11])
     const setTranslate = (swiper: any) => {
       let slides = swiper.slides
       for (let i = 0; i < slides.length; i++) {
@@ -75,6 +82,7 @@ export default defineComponent({
     return {
       setTranslate,
       iconClick,
+      swiperData,
       modules: [Navigation, Pagination, EffectFade, A11y, Autoplay],
     }
   },
@@ -83,13 +91,13 @@ export default defineComponent({
 <style lang="less">
 .product-swiper-box {
   .swiper-slide {
-    height: 300px;
+    height: 470px;
     width: 100%;
     line-height: 500px;
     font-size: 30px;
     text-align: center;
-    background: #C6D2E5;
-    opacity: 0.6;
+    // background: #c6d2e5;
+    // opacity: 0.6;
   }
   .swiper-button-prev,
   .swiper-button-next {
@@ -99,6 +107,10 @@ export default defineComponent({
 }
 </style>
 <style lang="less" scoped>
+.product-img{
+  width: 100%;
+  // height: 100%;
+}
 .product-swiper-box {
   width: 100%;
   min-width: 1200px;
@@ -112,7 +124,7 @@ export default defineComponent({
     }
   }
   .option-btns {
-    height: 100px;
+    height: 50px;
     line-height: 100px;
     position: relative;
     .option-btn {
@@ -147,13 +159,13 @@ export default defineComponent({
   line-height: 500px;
   font-size: 30px;
   text-align: center;
-  background: #C6D2E5;
-  opacity: 0.6;
+  // background: #c6d2e5;
+  // opacity: 0.6;
 }
-.swiper::v-deep(.swiper-pagination .swiper-pagination-bullet) {
-  background: rgb(255, 255, 255);
-}
-.swiper::v-deep(.swiper-pagination .swiper-pagination-bullet-active) {
-  background: rgb(255, 255, 255);
-}
+// .swiper::v-deep(.swiper-pagination .swiper-pagination-bullet) {
+//   background: rgb(255, 255, 255);
+// }
+// .swiper::v-deep(.swiper-pagination .swiper-pagination-bullet-active) {
+//   background: rgb(255, 255, 255);
+// }
 </style>

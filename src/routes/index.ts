@@ -3,28 +3,28 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
+    name: 'home',
     component: () => import('@/pages/home.vue'),
   },
   {
     path: '/solution',
+    name: 'solution',
     component: () => import('@/pages/solution.vue'),
   },
   {
-    path: '/production',
+    path: '/production/:pro',
+    name: 'production',
     component: () => import('@/pages/production/index.vue'),
-    children: [
-      {
-        path: '/detail',
-        component: () => import('@/pages/production/detail.vue'),
-      },
-    ],
+    // props: true
   },
   {
     path: '/case',
+    name: 'case',
     component: () => import('@/pages/case.vue'),
   },
   {
     path: '/about',
+    name: 'about',
     component: () => import('@/pages/about.vue'),
   },
 ]

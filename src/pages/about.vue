@@ -111,7 +111,7 @@ export default defineComponent({
     function switchBtn(index: number) {
       let left: any = ''
       if (index !== 0) {
-        left = 720 * index + 'px'
+        left = 1020 * index + 'px'
         left = '-' + left
       } else {
         left = 0
@@ -206,9 +206,9 @@ h2 {
   }
 }
 .join-us-header {
-  height: 50px;
+  height: 52px;
   line-height: 50px;
-  padding-left: 70px;
+  padding-left: 58px;
   // margin: 0 auto;
   width: 700px;
   .career-btn {
@@ -224,10 +224,11 @@ h2 {
   }
 }
 .join-us-msg {
-  width: 700px;
-  height: 404px;
+  width: 1000px;
+  height: 576px;
   overflow: hidden;
   position: relative;
+  margin-left: 20px;
   // margin: 10px auto;
 
   .join-us-content {
@@ -235,10 +236,11 @@ h2 {
     left: 0;
     right: 0;
     transition: 1s;
-    width: 3580px;
+    width: 5080px;
+    height: 576px;
     .career-item {
       float: left;
-      margin-left: 20px;
+      margin-left: 17px;
       width: 1000px;
       // height: 404px;
       &:first-of-type {
