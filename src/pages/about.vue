@@ -1,7 +1,5 @@
 <template>
-  <div class="team-header">
-    <img src="@/assets/images/about/about.jpg" />
-  </div>
+  <div class="header"></div>
   <div class="introduction-box">
     <div class="left-box">
       <h2>团队简介</h2>
@@ -129,12 +127,25 @@ export default defineComponent({
 })
 </script>
 <style lang="less" scoped>
-.team-header {
-  img {
-    width: 100%;
-    height: 500px;
-    // background: url('@/assets/images/banner1.png') no-repeat;
-  }
+// .team-header {
+//   img {
+//     width: 100%;
+//     height: 500px;
+//     // background: url('@/assets/images/banner1.png') no-repeat;
+//   }
+// }
+@media (min-width: 1550px) {
+    .header {
+        background-size: 100% 100% !important; /* Force the image to its minimum width */
+    }
+}
+.header {
+  width: 100%;
+  min-width: 1200px;
+  height: 450px;
+  background:url('@/assets/images/about/about.jpg') no-repeat center center;
+  background-size: auto 100%;
+  margin-bottom: 10px;
 }
 .bottom-border {
   width: 95px;

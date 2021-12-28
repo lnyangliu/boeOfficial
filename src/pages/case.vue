@@ -1,7 +1,5 @@
 <template>
-  <div class="header">
-    <img src="@/assets/images/case-page/case-banner.png" />
-  </div>
+  <div class="header"></div>
   <div class="case-box" v-for="item in caseData" :key="item.title">
     <div class="title-box">
       <div class="title-content">
@@ -70,14 +68,17 @@ export default defineComponent({
 })
 </script>
 <style lang="less" scoped>
+@media (min-width: 1550px) {
+    .header {
+        background-size: 100% 100% !important; /* Force the image to its minimum width */
+    }
+}
 .header {
   width: 100%;
   min-width: 1200px;
-  height: 356px;
-  img {
-    width: 100%;
-    height: 356px;
-  }
+  height: 450px;
+  background:url('@/assets/images/case-page/case-banner.png') no-repeat center center;
+  background-size: auto 100%;
 }
 .case-box {
   .title-box {

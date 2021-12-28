@@ -1,7 +1,6 @@
 <template>
   <div class="production">
     <div class="header">
-      <img :src="headImg" />
     </div>
     <div class="product-data" v-for="module in detailData" :key="module.name" v-show="module.name===showName">
       <div class="product-item" v-for="pro in module.data" :key="pro.video">
@@ -19,7 +18,6 @@
 <script lang="ts">
 import { defineComponent, reactive, ref } from 'vue'
 import router from '../../routes/index'
-import headImg from '@/assets/images/banner1.jpg'
 import fangzhen from '@/assets/images/production/fangzhen.png'
 import gongyi from '@/assets/images/production/gongyi.png'
 import cell from '@/assets/images/production/cell.jpg'
@@ -93,14 +91,22 @@ export default defineComponent({
     onBeforeRouteUpdate((to) => {
       showName.value = to.params.pro
     })
-    return { headImg,detailData, showName }
+    return { detailData, showName }
   },
 })
 </script>
 <style lang="less" scoped>
+@media (min-width: 1550px) {
+    .header {
+        background-size: 100% 100% !important; /* Force the image to its minimum width */
+    }
+}
 .header {
   width: 100%;
   min-width: 1200px;
+  height: 450px;
+  background:url('@/assets/images/banner1.jpg') no-repeat center center;
+  background-size: auto 100%;
 }
 .product-data {
   width: 1200px;
