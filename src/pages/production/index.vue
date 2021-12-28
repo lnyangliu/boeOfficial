@@ -87,6 +87,7 @@ export default defineComponent({
       },
     ])
     // 首次进入该页面判断当前路由
+    const params = router.currentRoute.value.params.pro
     const showName = ref(router.currentRoute.value.params.pro)
     // 监听路由变化
     onBeforeRouteUpdate((to) => {

@@ -98,7 +98,7 @@ export default defineComponent({
           router.push({
             name: 'production',
             params: {
-              pro: arr[2]
+              pro: arr[2] || 'quest'
             }
           })
         } else {

@@ -15,8 +15,12 @@
       @setTranslate="setTranslate"
       class="mySwiper"
     >
-      <swiper-slide v-for="(pro, index) in swiperData" :key="index+'pro'">
-        <img class="product-img" :src="pro" />
+      <swiper-slide
+        v-for="(pro, index) in swiperData"
+        :key="index + 'pro'"
+        @click="toProduct(pro.params)"
+      >
+        <img class="product-img" :src="pro.img" />
       </swiper-slide>
     </swiper>
     <div class="option-btns">
@@ -41,6 +45,7 @@ SwiperCore.use([EffectFade, Navigation, Pagination, A11y, Autoplay])
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css/bundle'
 import { defineComponent, reactive } from 'vue'
+import { useRouter } from 'vue-router'
 
 import p1 from '@/assets/images/home-product/p1.png'
 import p2 from '@/assets/images/home-product/p2.png'
@@ -60,7 +65,54 @@ export default defineComponent({
     SwiperSlide,
   },
   setup() {
-    const swiperData = reactive([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11])
+    let router = useRouter()
+    const swiperData = reactive([
+      {
+        params: 'ibox',
+        img: p1,
+      },
+      {
+        params: 'maskz',
+        img: p2,
+      },
+      {
+        params: 'quest',
+        img: p3,
+      },
+      {
+        params: 'gongyi',
+        img: p4,
+      },
+      {
+        params: 'cell',
+        img: p5,
+      },
+      {
+        params: 'fangzhen',
+        img: p6,
+      },
+      {
+        params: 'icheck',
+        img: p7,
+      },
+      {
+        params: 'cellz',
+        img: p8,
+      },
+      {
+        params: 'dianluz',
+        img: p9,
+      },
+      {
+        params: 'jixiez',
+        img: p10,
+      },
+      {
+        params: 'guangxuez',
+        img: p11,
+      },
+    ])
+    // const swiperData = reactive([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11])
     const setTranslate = (swiper: any) => {
       let slides = swiper.slides
       for (let i = 0; i < slides.length; i++) {
@@ -79,10 +131,19 @@ export default defineComponent({
           : document.querySelector('.swiper-button-next')
       node.click()
     }
+    const toProduct = (params: string) => {
+      router.push({
+        name: 'production',
+        params: {
+          pro: params,
+        },
+      })
+    }
     return {
       setTranslate,
       iconClick,
       swiperData,
+      toProduct,
       modules: [Navigation, Pagination, EffectFade, A11y, Autoplay],
     }
   },
@@ -96,8 +157,7 @@ export default defineComponent({
     line-height: 500px;
     font-size: 30px;
     text-align: center;
-    // background: #c6d2e5;
-    // opacity: 0.6;
+    cursor: pointer;
   }
   .swiper-button-prev,
   .swiper-button-next {
@@ -107,9 +167,8 @@ export default defineComponent({
 }
 </style>
 <style lang="less" scoped>
-.product-img{
+.product-img {
   width: 100%;
-  // height: 100%;
 }
 .product-swiper-box {
   width: 100%;
@@ -159,13 +218,6 @@ export default defineComponent({
   line-height: 500px;
   font-size: 30px;
   text-align: center;
-  // background: #c6d2e5;
-  // opacity: 0.6;
+  cursor: pointer;
 }
-// .swiper::v-deep(.swiper-pagination .swiper-pagination-bullet) {
-//   background: rgb(255, 255, 255);
-// }
-// .swiper::v-deep(.swiper-pagination .swiper-pagination-bullet-active) {
-//   background: rgb(255, 255, 255);
-// }
 </style>
