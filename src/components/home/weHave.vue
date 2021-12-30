@@ -5,8 +5,9 @@
     </div>
     <Waypoint @change="onChange" :options="options">
       <div class="content">
-        <div class="have-item" v-for="item in data" :key="item.text">
-          <div class="show-num">
+        <div class="have-item" v-for="(item,index) in data" :key="item.text">
+          <div class="left-line" v-show="index!=0"></div>
+          <div class="show-num font-30">
             <span class="num">{{ item.num }}</span>
             <span class="unit" v-show="item.unit">{{ item.unit }}</span>
             <span class="more" v-show="item.unit !== '人'">+</span>
@@ -122,25 +123,44 @@ export default defineComponent({
 .content {
   width:1200px;
   margin: 0 auto;
-  display:flex;
-  align-items: center;
-  justify-content: space-around;
+  overflow: hidden;
   padding: 30px 0;
+  padding-left: 30px;
   text-align:center;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  .have-item{
+    float: left;
+    margin-left: 40px;
+    padding-left: 40px;
+    position: relative;
+    &:hover {
+      .show-num{
+        color: @font-blue;
+      }
+    }
+    .left-line{
+      width:1px;
+      height: 60px;
+      background-color:#bababa;
+      position:absolute;
+      top: 10px;
+      left: 0;
+    }
+  }
   .show-num{
-    font-size: 24px;
-    color: #1877f2;
+    color: @font-gray;
     font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 10px;
   }
   .show-name{
-    font-size: 18px;
-    padding: 10px 20px;
-    background-image: linear-gradient(#fff, #9198e5);
-    border-radius: 10px;
+    padding: 0 20px;
     overflow: hidden;
     .name-icon{
-      height: 20px;
+      height: 14px;
       margin-top: 5px;
+      margin-right: 3px;
       display: block;
       float: left;
     }

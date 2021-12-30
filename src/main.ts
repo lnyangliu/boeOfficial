@@ -1,8 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './routes/index'
 import '@/assets/boe-iconfont/iconfont.css'
-import '@/assets/css/reset.css'
+import '@/assets/css/reset.less'
+import router from './routes/index'
 
 const app = createApp(App)
 app.use(router)

@@ -13,7 +13,7 @@
       class="mySwiper"
     >
       <!-- <swiper-slide><img src="@/assets/images/banner0.jpg" /></swiper-slide> -->
-      <swiper-slide><img src="@/assets/images/banner1.jpg" /></swiper-slide>
+      <swiper-slide><img class="banner-img" src="@/assets/images/banners/home-banner.jpg" /></swiper-slide>
       <!-- <swiper-slide><img src="@/assets/images/banner2.png" /></swiper-slide> -->
     </swiper>
   </div>
@@ -56,9 +56,7 @@ export default {
   min-width: 1200px;
 }
 .swiper-slide {
-  height: 500px;
   width: 100%;
-  line-height: 500px;
   font-size: 30px;
   text-align: center;
 }

@@ -18,12 +18,12 @@
 
 <script lang="ts">
 import { reactive, defineComponent } from 'vue'
-import soluteImg1 from '../../assets/images/cases/case1.avif'
-import soluteImg2 from '../../assets/images/cases/case2.avif'
-import soluteImg3 from '../../assets/images/cases/case3.avif'
-import soluteImg4 from '../../assets/images/cases/case4.avif'
-import soluteImg5 from '../../assets/images/cases/case5.avif'
-import soluteImg6 from '../../assets/images/cases/case6.avif'
+import soluteImg1 from '../../assets/images/cases/case1.jpg'
+import soluteImg2 from '../../assets/images/cases/case2.jpg'
+import soluteImg3 from '../../assets/images/cases/case3.jpg'
+import soluteImg4 from '../../assets/images/cases/case4.jpg'
+import soluteImg5 from '../../assets/images/cases/case5.jpg'
+import soluteImg6 from '../../assets/images/cases/case6.jpg'
 export default defineComponent({
   setup() {
     const solutionData = reactive([
@@ -86,7 +86,7 @@ export default defineComponent({
     grid-column-gap: 10px;
     .solution-item {
       border-radius: 6px;
-      height: 260px;
+      height: 240px;
       overflow: hidden;
       -webkit-box-shadow: 2px 2px 12px 0 rgb(0 0 0 / 20%);
       box-shadow: 2px 2px 12px 0 rgb(0 0 0 / 20%);

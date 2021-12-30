@@ -1,5 +1,7 @@
 <template>
-  <div class="header"></div>
+  <div class="header">
+      <img class="banner-img" src="@/assets/images/banners/solutions-banner.jpg" />
+  </div>
   <div class="solution-box">
     <div
       class="solution-case"
@@ -18,7 +20,7 @@
 
         <div class="jicheng" v-show="solute.isJicheng">集成</div>
         <div class="justify-line" v-show="solute.isJicheng"></div>
-        <div class="data-box" :class="solute.isJicheng?'jicheng-active':''">
+        <div class="data-box" :class="solute.isJicheng ? 'jicheng-active' : ''">
           <div class="item" v-for="item in solute.datas" :key="item.label">
             <div class="col-line" v-show="solute.isJicheng"></div>
             <img :src="item.icon" alt="" />
@@ -80,7 +82,7 @@ export default defineComponent({
       {
         bg: bg2,
         title: '检查产品',
-        text: '讲人工检车过程、内容，利用Web技术封装，建立一个自动化的检查平台',
+        text: '将人工检车过程、内容，利用Web技术封装，建立一个自动化的检查平台',
         isJicheng: false,
         datas: [
           {
@@ -98,7 +100,7 @@ export default defineComponent({
           {
             label: '检查结果一键出',
             icon: icon9,
-          }
+          },
         ],
       },
     ])
@@ -107,18 +109,9 @@ export default defineComponent({
 })
 </script>
 <style lang="less" scoped>
-@media (min-width: 1550px) {
-  .header {
-    background-size: 100% 100% !important;
-  }
-}
 .header {
   width: 100%;
   min-width: 1200px;
-  height: 450px;
-  background: url('@/assets/images/case-page/case-banner.png') no-repeat center
-    center;
-  background-size: auto 100%;
 }
 .solution-box {
   width: 1200px;
@@ -129,14 +122,15 @@ export default defineComponent({
     height: 600px;
     margin-top: 20px;
     position: relative;
+    border-radius: 6px;
     overflow: hidden;
     cursor: pointer;
     &:hover {
       .solute-msg {
         top: 0;
       }
-      .solute-bg{
-          transform: scale(1.1)
+      .solute-bg {
+        transform: scale(1.1);
       }
     }
     .solute-bg {
@@ -156,15 +150,15 @@ export default defineComponent({
       padding-top: 60px;
 
       .msg-header {
-        height: 26px;
+        height: 42px;
         margin: 50px;
         margin-bottom: 30px;
         overflow: hidden;
         .title-icon {
-          height: 20px;
+          height: 28px;
           width: 30px;
           margin-right: 20px;
-          margin-top: 3px;
+          margin-top: 8px;
           float: left;
           img {
             width: 100%;
@@ -174,10 +168,11 @@ export default defineComponent({
         .title-text {
           float: left;
           margin: 0;
+          font-size: 30px;
         }
       }
       .text-below-title {
-        font-size: 12px;
+        font-size: 14px;
         padding-left: 102px;
         margin-bottom: 40px;
       }
@@ -186,7 +181,7 @@ export default defineComponent({
         height: 30px;
         line-height: 30px;
         background-color: rgba(0, 0, 0, 0.99);
-        font-size: 12px;
+        font-size: 14px;
         text-align: center;
         border-radius: 10px;
         margin-left: 590px;
@@ -236,8 +231,8 @@ export default defineComponent({
           }
         }
       }
-      .jicheng-active{
-          margin-top: -50px;
+      .jicheng-active {
+        margin-top: -50px;
       }
     }
   }
