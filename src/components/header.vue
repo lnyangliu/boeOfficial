@@ -63,13 +63,12 @@ export default defineComponent({
               { name: 'iCheck平台', location: '/production/icheck' },
               { name: '仿真平台', location: '/production/fangzhen' },
               { name: 'iBox平台', location: '/production/ibox' },
-              { name: '工艺平台', location: '/production/gongyi' }
+              { name: '工艺平台', location: '/production/gongyi' },
             ],
           },
           {
             name: '自动化工具',
             children: [
-              
               { name: 'Mask自动化工具', location: '/production/maskz' },
               { name: 'Cell自动化工具', location: '/production/cellz' },
               { name: '电路自动化工具', location: '/production/dianluz' },
@@ -93,13 +92,13 @@ export default defineComponent({
     })
     function navClick(location: any, barIndex: number) {
       if (location) {
-        if(location.indexOf('/production') > -1) {
+        if (location.indexOf('/production') > -1) {
           let arr = location.split('/')
           router.push({
             name: 'production',
             params: {
-              pro: arr[2] || 'quest'
-            }
+              pro: arr[2] || 'quest',
+            },
           })
         } else {
           router.push(location)
@@ -117,6 +116,11 @@ export default defineComponent({
 </script>
 <style lang="less" scoped>
 .header-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: #fff;
   width: 100%;
   min-width: 1200px;
   background: #fff;

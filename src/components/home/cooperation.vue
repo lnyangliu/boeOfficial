@@ -4,10 +4,11 @@
       <h1 class="title-text">合作用户</h1>
     </div>
     <Waypoint @change="onChange">
+        <img class="businessImg" src="@/assets/images/business/0.jpg" />
       <div class="content">
-        <div class="item" v-for="(item, index) in data" :key="'img' + index">
+        <!-- <div class="item" v-for="(item, index) in data" :key="'img' + index">
           <img :src="item" />
-        </div>
+        </div> -->
       </div>
     </Waypoint>
   </div>
@@ -62,6 +63,9 @@ export default defineComponent({
 })
 </script>
 <style lang="less" scoped>
+.businessImg{
+  width: 100%;
+}
 .part-title {
   margin-top: 50px;
   margin-bottom: 20px;

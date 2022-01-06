@@ -157,7 +157,7 @@ export default {
       pre,
       p {
         font-size: 14px;
-        line-height: 10px;
+        line-height: 20px;
         text-align: justify;
         opacity: 0.7;
       }

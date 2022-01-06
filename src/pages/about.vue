@@ -4,7 +4,7 @@
   </div>
   <div class="introduction-box">
     <div class="left-box">
-      <h2 class="font-22">团队简介</h2>
+      <h2 class="font-22 font-bold">团队简介</h2>
       <img class="bottom-border" src="@/assets/images/about/1.png" />
       <div class="team-introduction">
         <p class="mb-50">
@@ -16,14 +16,14 @@
       </div>
     </div>
     <div class="part">
-      <h2 class="font-22">所有奖项</h2>
+      <h2 class="font-22 font-bold">所有奖项</h2>
       <img class="bottom-border" src="@/assets/images/about/2.png" />
       <div class="content">
         <img class="honor" src="@/assets/images/about/cup.png" />
       </div>
     </div>
     <div class="part">
-      <h2 class="font-22">软件著作</h2>
+      <h2 class="font-22 font-bold">软件著作</h2>
       <img class="bottom-border" src="@/assets/images/about/3.png" />
       <div class="content hornor-content">
         <div class="hornor" :class="isLeft ? 'hornor-left' : 'hornor-right'">
@@ -49,7 +49,7 @@
       </div>
     </div>
     <div class="part">
-      <h2 class="font-22">加入我们</h2>
+      <h2 class="font-22 font-bold">加入我们</h2>
       <img class="bottom-border" src="@/assets/images/about/4.png" />
       <div class="join-us-header">
         <span
@@ -96,7 +96,7 @@
       </div>
     </div>
     <div class="part">
-      <h2 class="font-22">联系我们</h2>
+      <h2 class="font-22 font-bold">联系我们</h2>
       <img class="bottom-border" src="@/assets/images/about/5.png" />
       <div class="connect-box">
         <div class="connect-left">
@@ -222,7 +222,7 @@ export default defineComponent({
         ],
       },
       {
-        label: 'IMask设计自动化开发研究员',
+        label: 'iMask设计自动化开发研究员',
         body: [
           {
             title: '岗位职责：',
@@ -298,7 +298,7 @@ h2 {
       padding-top: 35px;
       p {
         line-height: 35px;
-        color: #999;
+        color: #282828;
       }
       .mb-50 {
         margin-bottom: 45px;
@@ -403,7 +403,7 @@ h2 {
 .join-us-header {
   height: 52px;
   line-height: 50px;
-  padding-left: 58px;
+  padding-left: 118px;
   // margin: 0 auto;
   width: 700px;
   .career-btn {
@@ -423,8 +423,8 @@ h2 {
   height: 470px;
   overflow: hidden;
   position: relative;
-  margin-left: 20px;
-  // margin: 10px auto;
+  // margin-left: 20px;
+  margin: 10px auto;
 
   .join-us-content {
     position: absolute;

@@ -1,7 +1,7 @@
 <template>
   <div class="product-swiper-box">
     <div class="part-title">
-      <h1 class="title-text">产品</h1>
+      <h1 class="title-text">产品介绍</h1>
     </div>
     <swiper
       :spaceBetween="-30"

@@ -20,11 +20,11 @@
           </div>
           <div class="right qa-item">
             <div class="qa-text">
-              <h4 class="qa-title">用户痛点：</h4>
+              <h4 class="qa-title font-bold">用户痛点：</h4>
               <p class="ques">{{ item.ques }}</p>
             </div>
             <div class="qa-text">
-              <h4 class="qa-title">解决方案：</h4>
+              <h4 class="qa-title font-bold">解决方案：</h4>
               <p class="answer">{{ item.answer }}</p>
             </div>
           </div>
@@ -61,9 +61,9 @@ export default defineComponent({
       {
         title: '传感事业Mask开发科',
         img: case1,
-        isMan: true,
-        userName: 'Jhon',
-        career: '传感事业mask开发科科长',
+        isMan: false,
+        userName: '边若梅',
+        career: '传感事业Mask开发科',
         ques: '传感事业Mask开发科部分设计工作属于重复性高、耗时长的工作，且部分工作人工完成准确率低导致出错造成损失；',
         answer:
           '数字化开发团队为传感事业Mask开发提供了自动绘图工具以及图纸检查产品，提升效率，降低出错。',
@@ -73,9 +73,9 @@ export default defineComponent({
       {
         title: 'Cell RFQ检讨',
         img: case2,
-        isMan: false,
-        userName: 'Kathy',
-        career: 'cell开发科科长',
+        isMan: true,
+        userName: '王建俊',
+        career: 'B4 Cell开发科',
         ques: 'Cell RFQ检讨需要借助计算工具及软件，存在检讨时间长，效率低的问题，且部分工作依赖人工经验及数据，员工检讨使用个人数据库及检讨习惯，造成检讨结果的个人差异化；Cell Drawing图纸绘制大部分为重复工作，人员完成耗时长。',
         answer:
           '数字化研发团队为B4 Cell开发提供了Cell RFQ在线检讨系统及自动绘图工具，助力高效标准化研发。',

@@ -54,6 +54,7 @@ export default {
 .swiper-box {
   width: 100%;
   min-width: 1200px;
+  margin-top: 62px;
 }
 .swiper-slide {
   width: 100%;
